@@ -98,11 +98,11 @@ function keyPressed(){
     }
 }
 async function getBackgroundImg(){
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
+    var response = await fetch("http://worldtimeapi.org/api/timezone/America/Chicago");
     var responseJSON = await response.json();
-    
+    console.log(responseJSON);
     var datetime = responseJSON.datetime;
-    var hour = datetime.slice(11,13);
+    var hour = datetime.slice(11,16);
     console.log(hour);
     if(hour>=06 && hour<=19){
         bg = "sprites/bg.png"
@@ -111,5 +111,5 @@ async function getBackgroundImg(){
         bg = "sprites/bg2.jpg"
     }
     backgroundImg = loadImage(bg);
-    console.log(backgroundImg)
-}
+
+    }
